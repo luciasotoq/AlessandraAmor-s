@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Propuesta de diseño | Polideportivo</title>
+
+  <meta
+    name="description"
+    content="Presentación de propuesta de diseño para polideportivo de INVERSIONES &amp; LOGISTICA PQ EIRL: zonas de descanso, mobiliario, color e identidad gráfica."
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+        VARIABLES
+    ========================================================= */
+
+    :root {
+      --black: #111111;
+      --dark: #1d1d1d;
+      --text: #292929;
+      --muted: #777;
+      --light: #f5f5f3;
+      --lighter: #fafaf8;
+      --line: #dededb;
+      --white: #ffffff;
+
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+
+    /* =========================================================
+        RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================================================
+        SCROLLBAR
+    ========================================================= */
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #222;
+      border-radius: 20px;
+    }
+
+
+
+    /* =========================================================
+        HERO
+    ========================================================= */
+
+    .project-hero {
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: flex-end;
+      padding: 90px 6vw 70px;
+      position: relative;
+      background:
+        linear-gradient(
+          to bottom,
+          #fff 0%,
+          #f7f7f5 100%
+        );
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 1450px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 50px;
+    }
+
+    .hero-index {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .hero-title {
+      font-size: clamp(45px, 6.5vw, 110px);
+      line-height: .92;
+      font-weight: 500;
+      letter-spacing: -.075em;
+      color: #111;
+      max-width: 1100px;
+    }
+
+    .hero-title span {
+      display: block;
+      color: #999;
+      font-weight: 300;
+    }
+
+    .hero-side {
+      max-width: 300px;
+      padding-bottom: 5px;
+    }
+
+    .hero-side p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      left: 6vw;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .hero-scroll-line {
+      width: 45px;
+      height: 1px;
+      background: #aaa;
+    }
+
+
+    /* =========================================================
+        MAIN PROJECT
+    ========================================================= */
+
+    .project-layout {
+      max-width: 1400px;
+      margin: 100px auto 0;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+
+    /* =========================================================
+        PROJECT INFO
+    ========================================================= */
+
+    .project-info {
+      position: sticky;
+      top: 105px;
+      padding: 5px 0;
+    }
+
+    .project-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #999;
+    }
+
+    .project-info h3 {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .project-meta {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .meta-row {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-meta b {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    .project-meta span,
+    .project-meta ul {
+      display: block;
+      font-size: 12px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .project-meta ul {
+      margin: 0;
+      padding-left: 16px;
+      list-style-type: disc;
+    }
+
+    .project-meta ul li {
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+
+    /* =========================================================
+        CAROUSEL
+    ========================================================= */
+
+    .project-slider {
+      min-width: 0;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      background: #f1f1ef;
+      aspect-ratio: 1.45 / 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      list-style: none;
+      transition: transform .8s var(--ease);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 1s var(--ease);
+    }
+
+    .carousel-slide img:hover {
+      transform: scale(1.015);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 50%;
+      background: rgba(20,20,20,.55);
+      color: #fff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition:
+        transform .3s var(--ease),
+        background .3s ease;
+    }
+
+    .carousel-btn:hover {
+      background: #111;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-btn.left {
+      left: 20px;
+    }
+
+    .carousel-btn.right {
+      right: 20px;
+    }
+
+    .carousel-counter {
+      position: absolute;
+      right: 25px;
+      bottom: 20px;
+      padding: 7px 12px;
+      background: rgba(0,0,0,.55);
+      color: white;
+      font-size: 10px;
+      letter-spacing: .12em;
+      backdrop-filter: blur(8px);
+    }
+
+
+    /* =========================================================
+        THUMBNAILS
+    ========================================================= */
+
+    .carousel-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .carousel-nav img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: .45;
+      filter: grayscale(15%);
+      transition:
+        opacity .3s ease,
+        transform .3s var(--ease),
+        filter .3s ease;
+    }
+
+    .carousel-nav img:hover,
+    .carousel-nav img.active {
+      opacity: 1;
+      filter: grayscale(0);
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+        DIVIDER
+    ========================================================= */
+
+    .section-divider {
+      max-width: 1400px;
+      margin: 130px auto 0;
+      padding: 0 40px;
+    }
+
+    .section-divider-line {
+      height: 1px;
+      background: var(--line);
+    }
+
+
+    /* =========================================================
+        WORKFLOW
+    ========================================================= */
+
+    .workflow-section {
+      max-width: 1400px;
+      margin: 130px auto;
+      padding: 0 40px;
+    }
+
+    .workflow-header {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 80px;
+      margin-bottom: 85px;
+      align-items: end;
+    }
+
+    .workflow-kicker {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    .workflow-header h3 {
+      font-size: clamp(45px, 6vw, 85px);
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: -.07em;
+    }
+
+    .workflow-header p {
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #222;
+    }
+
+    .workflow-step {
+      min-height: 285px;
+      padding: 28px 20px 20px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      transition:
+        background .4s ease,
+        transform .4s var(--ease);
+    }
+
+    .workflow-step:first-child {
+      border-left: 1px solid var(--line);
+    }
+
+    .workflow-step:hover {
+      background: #f5f5f3;
+      transform: translateY(-5px);
+    }
+
+    .workflow-number {
+      font-size: 12px;
+      color: #999;
+      letter-spacing: .12em;
+      margin-bottom: 65px;
+    }
+
+    .workflow-step h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .workflow-step p {
+      font-size: 11.5px;
+      line-height: 1.75;
+      color: #777;
+    }
+
+
+    /* =========================================================
+        VIDEO
+    ========================================================= */
+
+    .project-video {
+      max-width: 1400px;
+      margin: 0 auto 140px;
+      padding: 0 40px;
+    }
+
+    .video-heading {
+      margin-bottom: 35px;
+    }
+
+    .video-heading span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .video-heading h3 {
+      font-size: 35px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+
+    .vimeo-wrapper {
+      position: relative;
+      padding-top: 56.21%;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .vimeo-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-credit {
+      margin-top: 14px;
+      font-size: 10px;
+      color: #888;
+      letter-spacing: .05em;
+    }
+
+
+
+    /* =========================================================
+        PDF
+    ========================================================= */
+
+    .pdf-container {
+      max-width: 1400px;
+      margin: 0 auto 140px;
+      padding: 0 40px;
+    }
+
+    .pdf-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .pdf-heading span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #999;
+    }
+
+    .pdf-heading h3 {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+
+    .pdf-wrapper {
+      position: relative;
+      width: 100%;
+      height: 850px;
+      overflow: hidden;
+      background: #f5f5f3;
+      box-shadow: 0 20px 60px rgba(0,0,0,.10);
+      margin-bottom: 30px;
+    }
+
+    .pdf-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-note {
+      margin-top: 15px;
+      font-size: 10px;
+      color: #999;
+      text-align: center;
+    }
+
+
+    /* =========================================================
+        LIGHTBOX
+    ========================================================= */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,10,.97);
+      padding: 40px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 20px 80px rgba(0,0,0,.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 42px;
+      font-weight: 200;
+      cursor: pointer;
+      z-index: 5001;
+      line-height: 1;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 5001;
+      transition: background .3s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+
+    /* =========================================================
+        PROJECT NAVIGATION
+    ========================================================= */
+
+    .project-nav {
+      max-width: 1400px;
+      margin: 0 auto 120px;
+      padding: 0 40px;
+    }
+
+    .project-nav-inner {
+      border-top: 1px solid #222;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-project {
+      padding: 35px 30px;
+      text-decoration: none;
+      transition:
+        background .3s ease,
+        padding .3s var(--ease);
+    }
+
+    .nav-project:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    .nav-project:hover {
+      background: #f5f5f3;
+      padding-left: 40px;
+    }
+
+    .nav-project.next:hover {
+      padding-left: 40px;
+    }
+
+    .nav-project small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .nav-project strong {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .nav-project.next {
+      text-align: right;
+    }
+
+
+    /* =========================================================
+        FOOTER
+    ========================================================= */
+
+    .site-footer {
+      padding: 55px 20px 35px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+
+    /* =========================================================
+        REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity .9s ease,
+        transform 1s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+        TABLET
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+.project-layout {
+        grid-template-columns: 250px 1fr;
+        gap: 40px;
+      }
+
+      .workflow {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .workflow-step {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+
+    /* =========================================================
+        MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      body {
+}
+.project-hero {
+        min-height: 75vh;
+        padding: 70px 20px 55px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-title {
+        font-size: clamp(38px, 12vw, 75px);
+      }
+
+      .hero-side {
+        max-width: 300px;
+      }
+
+      .hero-scroll {
+        left: 20px;
+      }
+
+      .project-layout {
+        display: flex;
+        flex-direction: column;
+        margin-top: 65px;
+        padding: 0 15px;
+        gap: 45px;
+      }
+
+      .project-info {
+        position: relative;
+        top: auto;
+        width: 100%;
+      }
+
+      .project-info h3 {
+        font-size: 28px;
+      }
+
+      .carousel-container {
+        aspect-ratio: 1 / 1;
+      }
+
+      .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+      }
+
+      .carousel-btn.left {
+        left: 10px;
+      }
+
+      .carousel-btn.right {
+        right: 10px;
+      }
+
+      .carousel-nav {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .carousel-nav img {
+        height: 55px;
+      }
+
+      .section-divider {
+        margin-top: 80px;
+        padding: 0 15px;
+      }
+
+      .workflow-section {
+        margin: 85px auto;
+        padding: 0 20px;
+      }
+
+      .workflow-header {
+        display: block;
+        margin-bottom: 50px;
+      }
+
+      .workflow-header h3 {
+        margin-bottom: 30px;
+      }
+
+      .workflow {
+        display: block;
+      }
+
+      .workflow-step {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        min-height: auto;
+        padding: 25px 0;
+        border-left: 0 !important;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .workflow-number {
+        margin: 0;
+        grid-row: span 2;
+        font-size: 11px;
+      }
+
+      .workflow-step h4 {
+        margin-bottom: 8px;
+      }
+
+      .project-video {
+        padding: 0 15px;
+        margin-bottom: 90px;
+      }
+
+      .video-heading h3 {
+        font-size: 29px;
+      }
+.pdf-container {
+        padding: 0 15px;
+        margin-bottom: 90px;
+      }
+
+      .pdf-heading {
+        display: block;
+      }
+
+      .pdf-heading h3 {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+
+      .pdf-wrapper {
+        height: 600px;
+      }
+
+      .project-nav {
+        padding: 0 15px;
+        margin-bottom: 80px;
+      }
+
+      .project-nav-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-project:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-project.next {
+        text-align: left;
+      }
+
+      .nav-project:hover,
+      .nav-project.next:hover {
+        padding-left: 40px;
+      }
+
+      .lightbox {
+        padding: 20px;
+      }
+
+      .lightbox-close {
+        right: 20px;
+        top: 15px;
+      }
+
+      .lightbox-btn {
+        width: 42px;
+        height: 42px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+    /* =========================================================
+       ENCABEZADO SUPERIOR — SOLO LOGO
+    ========================================================= */
+    body {
+      padding-top: 88px;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      z-index: 2000;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-center img {
+      display: block;
+      width: auto;
+      height: 100px;
+      max-width: min(70vw, 400px);
+      object-fit: contain;
+    }
+
+    .project-hero {
+      min-height: calc(100vh - 88px);
+    }
+
+    @media (max-width: 700px) {
+      body { padding-top: 68px; }
+      .navbar { height: 68px; padding: 0 16px; }
+      .nav-center img { height: 40px; max-width: 76vw; }
+      .project-hero { min-height: calc(100vh - 68px); }
+    }
+
+
+  </style>
+</head>
+
+
+<body>
+
+
+
+
+
+
+
+<!-- =========================================================
+    ENCABEZADO — LOGO DEL ESTUDIO
+========================================================= -->
+<header class="navbar" aria-label="Encabezado de la presentación">
+  <div class="nav-center">
+    <img src="images/logoale.webp" alt="Logo del estudio de diseño">
+  </div>
+</header>
+
+<!-- =========================================================
+    HERO
+========================================================= -->
+
+<section class="project-hero">
+
+  <div class="hero-content">
+
+    <div>
+
+      <div class="hero-index">
+        01 / Interior Design Project
+      </div>
+
+      <h1 class="hero-title">
+
+        Poli
+        <span>
+          deportivo
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div class="hero-side">
+
+      <p>
+        Propuesta de diseño para un polideportivo con canchas de fútbol y vóley, zonas de descanso y espacios complementarios pensados para mejorar la experiencia de sus usuarios.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-scroll">
+
+    <span class="hero-scroll-line"></span>
+
+    Scroll para explorar
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    PROJECT INFORMATION + CAROUSEL
+========================================================= -->
+
+<section class="project-layout reveal">
+
+
+  <aside class="project-info">
+
+    <span class="project-label">
+      Ficha del proyecto
+    </span>
+
+
+    <h3>
+      Propuesta de diseño de interiores, mobiliario e identidad visual.
+    </h3>
+
+
+    <div class="project-meta">
+
+
+      <!-- SOLUCIÓN -->
+
+      <div class="meta-row">
+
+        <b>
+          Solución
+        </b>
+
+        <span>
+          Desarrollar una propuesta de diseño que renueve la imagen del polideportivo y mejore la funcionalidad de sus espacios complementarios. El planteamiento integra zonas de descanso, mobiliario para la oficina-tienda y recursos cromáticos y gráficos aplicados al entorno deportivo, incluyendo viniles para los bordes de las canchas. La propuesta busca articular los distintos ambientes mediante una identidad visual coherente, dinámica y vinculada con la actividad deportiva.
+        </span>
+
+      </div>
+
+
+      <!-- ALCANCE -->
+
+      <div class="meta-row">
+
+        <b>
+          Alcance
+        </b>
+
+        <ul>
+
+          <li>Diseño de zonas de descanso</li>
+          <li>Planteamiento de mobiliario y distribución</li>
+          <li>Propuesta para oficina y tienda</li>
+          <li>Selección y aplicación de color</li>
+          <li>Diseño de viniles gráficos para las canchas</li>
+          <li>Modelado 3D y visualización arquitectónica</li>
+          <li>Desarrollo de láminas de presentación</li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- TIPOLOGÍA -->
+
+      <div class="meta-row">
+
+        <b>
+          Tipología
+        </b>
+
+        <span>
+          Espacio deportivo y recreativo con canchas de fútbol y vóley.
+        </span>
+
+      </div>
+
+
+      <!-- CLIENTE -->
+
+      <div class="meta-row">
+
+        <b>
+          Cliente
+        </b>
+
+        <span>
+          INVERSIONES &amp; LOGISTICA PQ EIRL
+        </span>
+
+      </div>
+
+
+      <!-- SOFTWARE -->
+
+      <div class="meta-row">
+
+        <b>
+          Software
+        </b>
+
+        <span>
+          AutoCAD · SketchUp · Layout · Enscape · Gemini PRO
+        </span>
+
+      </div>
+    </div>
+
+  </aside>
+
+
+
+  <!-- =======================================================
+      CAROUSEL
+  ======================================================== -->
+
+  <div class="project-slider">
+
+
+    <div class="carousel-container">
+
+
+      <button
+        class="carousel-btn left"
+        type="button"
+        aria-label="Imagen anterior"
+      >
+        ❮
+      </button>
+
+
+      <ul class="carousel-track">
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo1.webp"
+            alt="Polideportivo - vista 1"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo2.webp"
+            alt="Polideportivo - vista 2"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo3.webp"
+            alt="Polideportivo - vista 3"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo4.webp"
+            alt="Polideportivo - vista 4"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo5.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo6.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo7.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo8.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo9.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+
+      </ul>
+
+
+      <button
+        class="carousel-btn right"
+        type="button"
+        aria-label="Imagen siguiente"
+      >
+        ❯
+      </button>
+
+
+      <div class="carousel-counter">
+
+        <span id="current-number">
+          01
+        </span>
+
+        / 05
+
+      </div>
+
+    </div>
+
+
+
+    <!-- THUMBNAILS -->
+
+    <div class="carousel-nav">
+
+
+      <img
+        src="images/polideportivo1.webp"
+        data-index="0"
+        class="active"
+        alt="Miniatura Polideportivo 1"
+      >
+
+
+      <img
+        src="images/polideportivo2.webp"
+        data-index="1"
+        alt="Miniatura Polideportivo 2"
+      >
+
+
+      <img
+        src="images/polideportivo3.webp"
+        data-index="2"
+        alt="Miniatura Polideportivo 3"
+      >
+
+
+      <img
+        src="images/polideportivo4.webp"
+        data-index="3"
+        alt="Miniatura Polideportivo 4"
+      >
+
+
+      <img
+        src="images/polideportivo5.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 5"
+      >
+
+
+            <img
+        src="images/polideportivo6.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 6"
+      >
+
+
+            <img
+        src="images/polideportivo7.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 7"
+      >
+
+
+            <img
+        src="images/polideportivo8.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 8"
+      >
+
+      <img
+        src="images/polideportivo9.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 9"
+      >
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    DIVIDER
+========================================================= -->
+
+<div class="section-divider">
+
+  <div class="section-divider-line"></div>
+
+</div>
+
+
+
+<!-- =========================================================
+    WORKFLOW
+========================================================= -->
+
+<section class="workflow-section reveal">
+
+
+  <div class="workflow-header">
+
+
+    <div>
+
+      <span class="workflow-kicker">
+        Proceso de diseño
+      </span>
+
+      <h3>
+        Workflow
+      </h3>
+
+    </div>
+
+
+    <p>
+      Desarrollo de una propuesta visual y funcional para organizar los espacios complementarios del polideportivo y reforzar la identidad del conjunto mediante mobiliario, color y recursos gráficos.
+    </p>
+
+  </div>
+
+
+
+  <div class="workflow">
+
+
+    <!-- 01 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        01
+      </div>
+
+      <h4>
+        Análisis de necesidades
+      </h4>
+
+      <p>
+        Reconocimiento de las áreas de uso, las necesidades de los usuarios y las oportunidades de mejora en las zonas de descanso, la oficina-tienda y el entorno de las canchas.
+      </p>
+
+    </div>
+
+
+
+    <!-- 02 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        02
+      </div>
+
+      <h4>
+        Concepto y distribución
+      </h4>
+
+      <p>
+        Definición de un lenguaje visual deportivo mediante una propuesta de color, organización espacial y criterios de integración entre las distintas áreas.
+      </p>
+
+    </div>
+
+
+
+    <!-- 03 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        03
+      </div>
+
+      <h4>
+        Modelado y mobiliario
+      </h4>
+
+      <p>
+        Modelado tridimensional de los ambientes y planteamiento de mobiliario para las zonas de descanso y el espacio de oficina-tienda.
+      </p>
+
+    </div>
+
+
+
+    <!-- 04 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        04
+      </div>
+
+      <h4>
+        Visualización
+      </h4>
+
+      <p>
+        Elaboración de visualizaciones para comunicar la propuesta de distribución, mobiliario, paleta cromática y aplicación de gráficos en el polideportivo.
+      </p>
+
+    </div>
+
+
+
+    <!-- 05 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        05
+      </div>
+
+      <h4>
+        Documentación técnica
+      </h4>
+
+      <p>
+        Organización de láminas y documentación gráfica para presentar de forma clara los criterios de diseño, las soluciones propuestas y su aplicación en los espacios.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    PRESENTACIÓN VISUAL
+========================================================= -->
+
+<section class="project-video reveal">
+  <div class="video-heading">
+    <span>Visualización</span>
+    <h3>Propuesta del polideportivo</h3>
+  </div>
+  <div class="vimeo-wrapper" style="padding: 36px; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--light);">
+    <p>En este espacio se puede incorporar un recorrido virtual o video de presentación del proyecto cuando esté disponible.</p>
+  </div>
+</section>
+
+
+
+
+<!-- =========================================================
+    PDF
+========================================================= -->
+
+<section class="pdf-container reveal">
+
+
+  <div class="pdf-heading">
+
+
+    <div>
+
+      <span>
+        Documentación
+      </span>
+
+      <h3>
+        Planos y documentos
+      </h3>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="pdf-wrapper">
+
+    <iframe
+      src="documentacion-polideportivo.pdf"
+      allowfullscreen
+      title="Láminas y documentación del polideportivo"
+    >
+    </iframe>
+
+  </div>
+
+
+
+  <p class="pdf-note">
+
+    La documentación de la propuesta se presenta en este espacio. Coloca el archivo documentacion-polideportivo.pdf junto al HTML.
+
+  </p>
+
+
+</section>
+
+
+
+<!-- =========================================================
+    LIGHTBOX
+========================================================= -->
+
+<div
+  id="lightbox"
+  class="lightbox"
+  aria-hidden="true"
+>
+
+
+  <span
+    class="lightbox-close"
+    role="button"
+    tabindex="0"
+    aria-label="Cerrar imagen"
+  >
+    &times;
+  </span>
+
+
+  <img
+    id="lightbox-image"
+    src=""
+    alt="Imagen ampliada del proyecto"
+  >
+
+
+  <button
+    class="lightbox-btn lightbox-prev"
+    type="button"
+    aria-label="Imagen anterior"
+  >
+    ❮
+  </button>
+
+
+  <button
+    class="lightbox-btn lightbox-next"
+    type="button"
+    aria-label="Imagen siguiente"
+  >
+    ❯
+  </button>
+
+
+</div>
+
+
+
+<!-- =========================================================
+    CIERRE DE PRESENTACIÓN
+========================================================= -->
+<section class="project-nav">
+  <div class="project-nav-inner" style="justify-content: center; text-align: center;">
+    <div class="nav-project" style="cursor: default;">
+      <small>Propuesta de diseño</small>
+      <strong>Polideportivo · Espacios deportivos y recreativos</strong>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- =========================================================
+    FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+  © 2026 Lucía Soto · Programación asistida por IA
+
+</footer>
+
+
+
+<!-- =========================================================
+    JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  /* =========================================================
+      CARRUSEL
+  ========================================================= */
+
+  const track =
+    document.querySelector(".carousel-track");
+
+
+  if (track) {
+
+
+    const slides =
+      Array.from(track.children);
+
+
+    const nextButton =
+      document.querySelector(".carousel-btn.right");
+
+
+    const prevButton =
+      document.querySelector(".carousel-btn.left");
+
+
+    const thumbnails =
+      document.querySelectorAll(".carousel-nav img");
+
+
+    const counter =
+      document.getElementById("current-number");
+
+
+    let currentIndex = 0;
+
+
+
+    function updateCarousel(index) {
+
+
+      track.style.transform =
+        `translateX(-${index * 100}%)`;
+
+
+      thumbnails.forEach((thumbnail) => {
+
+        thumbnail.classList.remove("active");
+
+      });
+
+
+      if (thumbnails[index]) {
+
+        thumbnails[index].classList.add("active");
+
+      }
+
+
+      if (counter) {
+
+        counter.textContent =
+          String(index + 1).padStart(2, "0");
+
+      }
+
+
+      currentIndex = index;
+
+    }
+
+
+
+    /* =======================================================
+        NEXT / PREVIOUS
+    ======================================================== */
+
+    if (nextButton && prevButton) {
+
+
+      nextButton.addEventListener("click", () => {
+
+        currentIndex =
+          (currentIndex + 1) %
+          slides.length;
+
+        updateCarousel(currentIndex);
+
+      });
+
+
+      prevButton.addEventListener("click", () => {
+
+        currentIndex =
+          (currentIndex - 1 + slides.length) %
+          slides.length;
+
+        updateCarousel(currentIndex);
+
+      });
+
+    }
+
+
+
+    /* =======================================================
+        THUMBNAILS
+    ======================================================== */
+
+    thumbnails.forEach((thumbnail) => {
+
+
+      thumbnail.addEventListener("click", () => {
+
+
+        currentIndex =
+          Number(thumbnail.dataset.index);
+
+
+        updateCarousel(currentIndex);
+
+      });
+
+    });
+
+
+
+    /* =======================================================
+        LIGHTBOX
+    ======================================================== */
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+
+    const lightboxImage =
+      document.getElementById("lightbox-image");
+
+
+    const lightboxClose =
+      document.querySelector(".lightbox-close");
+
+
+    const lightboxPrev =
+      document.querySelector(".lightbox-prev");
+
+
+    const lightboxNext =
+      document.querySelector(".lightbox-next");
+
+
+
+    function openLightbox(index) {
+
+
+      currentIndex = index;
+
+
+      const image =
+        slides[index].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      if (lightbox) {
+
+
+        lightbox.classList.add("open");
+
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+
+      }
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    slides.forEach((slide, index) => {
+
+
+      const image =
+        slide.querySelector("img");
+
+
+      image.addEventListener("click", () => {
+
+        openLightbox(index);
+
+      });
+
+    });
+
+
+
+    function closeLightbox() {
+
+
+      if (lightbox) {
+
+
+        lightbox.classList.remove("open");
+
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+
+      }
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    if (lightboxClose) {
+
+
+      lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+      );
+
+
+      lightboxClose.addEventListener(
+        "keydown",
+        (event) => {
+
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+
+            closeLightbox();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    if (lightbox) {
+
+
+      lightbox.addEventListener(
+        "click",
+        (event) => {
+
+
+          if (event.target === lightbox) {
+
+            closeLightbox();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        LIGHTBOX NEXT
+    ======================================================== */
+
+    function showNextImage() {
+
+
+      currentIndex =
+        (currentIndex + 1) %
+        slides.length;
+
+
+      const image =
+        slides[currentIndex].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      updateCarousel(currentIndex);
+
+    }
+
+
+
+    /* =======================================================
+        LIGHTBOX PREVIOUS
+    ======================================================== */
+
+    function showPreviousImage() {
+
+
+      currentIndex =
+        (currentIndex - 1 + slides.length) %
+        slides.length;
+
+
+      const image =
+        slides[currentIndex].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      updateCarousel(currentIndex);
+
+    }
+
+
+
+    if (lightboxNext) {
+
+
+      lightboxNext.addEventListener(
+        "click",
+        (event) => {
+
+
+          event.stopPropagation();
+
+
+          showNextImage();
+
+        }
+      );
+
+    }
+
+
+
+    if (lightboxPrev) {
+
+
+      lightboxPrev.addEventListener(
+        "click",
+        (event) => {
+
+
+          event.stopPropagation();
+
+
+          showPreviousImage();
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        KEYBOARD
+    ======================================================== */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+
+        if (
+          !lightbox ||
+          !lightbox.classList.contains("open")
+        ) {
+
+
+          return;
+
+        }
+
+
+        if (event.key === "Escape") {
+
+          closeLightbox();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+          showNextImage();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+          showPreviousImage();
+
+        }
+
+      }
+    );
+
+
+
+    /* =======================================================
+        SWIPE — LIGHTBOX
+    ======================================================== */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    if (lightbox) {
+
+
+      lightbox.addEventListener(
+        "touchstart",
+        (event) => {
+
+
+          touchStartX =
+            event.changedTouches[0].screenX;
+
+        }
+      );
+
+
+      lightbox.addEventListener(
+        "touchend",
+        (event) => {
+
+
+          touchEndX =
+            event.changedTouches[0].screenX;
+
+
+          if (
+            touchEndX <
+            touchStartX - 50
+          ) {
+
+
+            showNextImage();
+
+          }
+
+
+          if (
+            touchEndX >
+            touchStartX + 50
+          ) {
+
+
+            showPreviousImage();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        SWIPE — CAROUSEL
+    ======================================================== */
+
+    let sliderStartX = 0;
+    let sliderEndX = 0;
+
+
+    const carouselContainer =
+      document.querySelector(".carousel-container");
+
+
+    if (carouselContainer) {
+
+
+      carouselContainer.addEventListener(
+        "touchstart",
+        (event) => {
+
+
+          sliderStartX =
+            event.changedTouches[0].screenX;
+
+        }
+      );
+
+
+      carouselContainer.addEventListener(
+        "touchend",
+        (event) => {
+
+
+          sliderEndX =
+            event.changedTouches[0].screenX;
+
+
+          if (
+            sliderEndX <
+            sliderStartX - 50
+          ) {
+
+
+            currentIndex =
+              (currentIndex + 1) %
+              slides.length;
+
+
+            updateCarousel(currentIndex);
+
+          }
+
+
+          if (
+            sliderEndX >
+            sliderStartX + 50
+          ) {
+
+
+            currentIndex =
+              (currentIndex - 1 + slides.length) %
+              slides.length;
+
+
+            updateCarousel(currentIndex);
+
+          }
+
+        }
+      );
+
+    }
+
+
+    updateCarousel(0);
+
+  }
+
+
+
+  /* =========================================================
+      SCROLL REVEAL
+  ========================================================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+      (entries) => {
+
+
+        entries.forEach((entry) => {
+
+
+          if (entry.isIntersecting) {
+
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  revealElements.forEach((element) => {
+
+    observer.observe(element);
+
+  });
+
+
+});
+
+</script>
+
+
+</body>
+</html>
