@@ -1,0 +1,2774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Proyecto La Foret | Lucía Soto</title>
+
+  <meta
+    name="description"
+    content="Proyecto La Foret — diseño de interiores, visualización arquitectónica y documentación técnica desarrollado por Lucía Soto."
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+        VARIABLES
+    ========================================================= */
+
+    :root {
+      --black: #111111;
+      --dark: #1d1d1d;
+      --text: #292929;
+      --muted: #777;
+      --light: #f5f5f3;
+      --lighter: #fafaf8;
+      --line: #dededb;
+      --white: #ffffff;
+
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+
+    /* =========================================================
+        RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      padding-top: 88px;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =========================================================
+        SCROLLBAR
+    ========================================================= */
+
+    ::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #222;
+      border-radius: 20px;
+    }
+
+
+    /* =========================================================
+        HEADER / NAVBAR
+    ========================================================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      z-index: 2000;
+      transition:
+        background 0.4s ease,
+        height 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+
+    /* =========================================================
+        NAVBAR — SCROLL
+    ========================================================= */
+
+    .navbar.scrolled {
+      height: 76px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+
+    /* =========================================================
+        MENÚ IZQUIERDO
+    ========================================================= */
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+
+    /* =========================================================
+        LINKS DEL MENÚ
+    ========================================================= */
+
+    .nav-left a {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 16px;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #555555;
+      text-decoration: none;
+      border-radius: 999px;
+      z-index: 1;
+      transition:
+        color 0.4s var(--ease),
+        transform 0.4s var(--ease);
+    }
+
+
+    /* =========================================================
+        CÍRCULO NEGRO
+    ========================================================= */
+
+    .nav-left a::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: #111111;
+      transform: translate(-50%, -50%) scale(0);
+      z-index: -1;
+      transition:
+        width 0.55s var(--ease),
+        height 0.55s var(--ease),
+        transform 0.55s var(--ease);
+    }
+
+
+    /* =========================================================
+        HOVER
+    ========================================================= */
+
+    .nav-left a:hover {
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .nav-left a:hover::before {
+      width: 52px;
+      height: 52px;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+
+    /* =========================================================
+        LOGO CENTRAL
+    ========================================================= */
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-center img {
+      display: block;
+      width: auto;
+      height: 40px;
+      transition: transform 0.4s var(--ease);
+    }
+
+    .nav-center img:hover {
+      transform: scale(1.04);
+    }
+
+
+    /* =========================================================
+        REDES SOCIALES
+    ========================================================= */
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .icon-circle {
+      width: 31px;
+      height: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #111111;
+      text-decoration: none;
+      transition:
+        transform 0.35s var(--ease),
+        background 0.3s ease;
+    }
+
+    .icon-circle:hover {
+      transform: translateY(-3px) scale(1.08);
+      background: #333333;
+    }
+
+    .icon-circle svg {
+      width: 14px;
+      height: 14px;
+      fill: #ffffff;
+    }
+
+    .icon-circle.instagram svg {
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 1.8;
+    }
+
+
+    /* =========================================================
+        HERO
+    ========================================================= */
+
+    .project-hero {
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: flex-end;
+      padding: 90px 6vw 70px;
+      position: relative;
+      background:
+        linear-gradient(
+          to bottom,
+          #fff 0%,
+          #f7f7f5 100%
+        );
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 1450px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 50px;
+    }
+
+    .hero-index {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 25px;
+    }
+
+    .hero-title {
+      font-size: clamp(45px, 6.5vw, 110px);
+      line-height: .92;
+      font-weight: 500;
+      letter-spacing: -.075em;
+      color: #111;
+      max-width: 1100px;
+    }
+
+    .hero-title span {
+      display: block;
+      color: #999;
+      font-weight: 300;
+    }
+
+    .hero-side {
+      max-width: 300px;
+      padding-bottom: 5px;
+    }
+
+    .hero-side p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      left: 6vw;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .hero-scroll-line {
+      width: 45px;
+      height: 1px;
+      background: #aaa;
+    }
+
+
+    /* =========================================================
+        MAIN PROJECT
+    ========================================================= */
+
+    .project-layout {
+      max-width: 1400px;
+      margin: 100px auto 0;
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: 310px 1fr;
+      gap: 75px;
+      align-items: start;
+    }
+
+
+    /* =========================================================
+        PROJECT INFO
+    ========================================================= */
+
+    .project-info {
+      position: sticky;
+      top: 105px;
+      padding: 5px 0;
+    }
+
+    .project-label {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #999;
+    }
+
+    .project-info h3 {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      margin-bottom: 28px;
+    }
+
+    .project-meta {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+    }
+
+    .meta-row {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-meta b {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 4px;
+    }
+
+    .project-meta span,
+    .project-meta ul {
+      display: block;
+      font-size: 12px;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .project-meta ul {
+      margin: 0;
+      padding-left: 16px;
+      list-style-type: disc;
+    }
+
+    .project-meta ul li {
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+
+    /* =========================================================
+        CAROUSEL
+    ========================================================= */
+
+    .project-slider {
+      min-width: 0;
+    }
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      background: #f1f1ef;
+      aspect-ratio: 1.45 / 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      list-style: none;
+      transition: transform .8s var(--ease);
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 1s var(--ease);
+    }
+
+    .carousel-slide img:hover {
+      transform: scale(1.015);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 52px;
+      height: 52px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 50%;
+      background: rgba(20,20,20,.55);
+      color: #fff;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition:
+        transform .3s var(--ease),
+        background .3s ease;
+    }
+
+    .carousel-btn:hover {
+      background: #111;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .carousel-btn.left {
+      left: 20px;
+    }
+
+    .carousel-btn.right {
+      right: 20px;
+    }
+
+    .carousel-counter {
+      position: absolute;
+      right: 25px;
+      bottom: 20px;
+      padding: 7px 12px;
+      background: rgba(0,0,0,.55);
+      color: white;
+      font-size: 10px;
+      letter-spacing: .12em;
+      backdrop-filter: blur(8px);
+    }
+
+
+    /* =========================================================
+        THUMBNAILS
+    ========================================================= */
+
+    .carousel-nav {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .carousel-nav img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      cursor: pointer;
+      opacity: .45;
+      filter: grayscale(15%);
+      transition:
+        opacity .3s ease,
+        transform .3s var(--ease),
+        filter .3s ease;
+    }
+
+    .carousel-nav img:hover,
+    .carousel-nav img.active {
+      opacity: 1;
+      filter: grayscale(0);
+      transform: translateY(-3px);
+    }
+
+
+    /* =========================================================
+        DIVIDER
+    ========================================================= */
+
+    .section-divider {
+      max-width: 1400px;
+      margin: 130px auto 0;
+      padding: 0 40px;
+    }
+
+    .section-divider-line {
+      height: 1px;
+      background: var(--line);
+    }
+
+
+    /* =========================================================
+        WORKFLOW
+    ========================================================= */
+
+    .workflow-section {
+      max-width: 1400px;
+      margin: 130px auto;
+      padding: 0 40px;
+    }
+
+    .workflow-header {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 80px;
+      margin-bottom: 85px;
+      align-items: end;
+    }
+
+    .workflow-kicker {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    .workflow-header h3 {
+      font-size: clamp(45px, 6vw, 85px);
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: -.07em;
+    }
+
+    .workflow-header p {
+      max-width: 600px;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #222;
+    }
+
+    .workflow-step {
+      min-height: 285px;
+      padding: 28px 20px 20px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      transition:
+        background .4s ease,
+        transform .4s var(--ease);
+    }
+
+    .workflow-step:first-child {
+      border-left: 1px solid var(--line);
+    }
+
+    .workflow-step:hover {
+      background: #f5f5f3;
+      transform: translateY(-5px);
+    }
+
+    .workflow-number {
+      font-size: 12px;
+      color: #999;
+      letter-spacing: .12em;
+      margin-bottom: 65px;
+    }
+
+    .workflow-step h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .workflow-step p {
+      font-size: 11.5px;
+      line-height: 1.75;
+      color: #777;
+    }
+
+
+    /* =========================================================
+        VIDEO
+    ========================================================= */
+
+    .project-video {
+      max-width: 1400px;
+      margin: 0 auto 140px;
+      padding: 0 40px;
+    }
+
+    .video-heading {
+      margin-bottom: 35px;
+    }
+
+    .video-heading span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .video-heading h3 {
+      font-size: 35px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+
+    .vimeo-wrapper {
+      position: relative;
+      padding-top: 56.21%;
+      background: #111;
+      overflow: hidden;
+    }
+
+    .vimeo-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-credit {
+      margin-top: 14px;
+      font-size: 10px;
+      color: #888;
+      letter-spacing: .05em;
+    }
+
+
+    /* =========================================================
+        PROCESS / TIKTOK
+    ========================================================= */
+
+    .process-videos {
+      max-width: 1400px;
+      margin: 0 auto 140px;
+      padding: 0 40px;
+    }
+
+    .process-heading {
+      margin-bottom: 35px;
+    }
+
+    .process-heading span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+
+    .process-heading h3 {
+      font-size: 35px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+
+    .tiktok-embed-wrapper {
+      max-width: 605px;
+      min-width: 325px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    .tiktok-embed-wrapper h4 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .process-credit {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 10px;
+      color: #888;
+      letter-spacing: .05em;
+    }
+
+
+    /* =========================================================
+        PDF
+    ========================================================= */
+
+    .pdf-container {
+      max-width: 1400px;
+      margin: 0 auto 140px;
+      padding: 0 40px;
+    }
+
+    .pdf-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .pdf-heading span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #999;
+    }
+
+    .pdf-heading h3 {
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+
+    .pdf-wrapper {
+      position: relative;
+      width: 100%;
+      height: 850px;
+      overflow: hidden;
+      background: #f5f5f3;
+      box-shadow: 0 20px 60px rgba(0,0,0,.10);
+      margin-bottom: 30px;
+    }
+
+    .pdf-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-note {
+      margin-top: 15px;
+      font-size: 10px;
+      color: #999;
+      text-align: center;
+    }
+
+
+    /* =========================================================
+        LIGHTBOX
+    ========================================================= */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 5000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(10,10,10,.97);
+      padding: 40px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 20px 80px rgba(0,0,0,.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 42px;
+      font-weight: 200;
+      cursor: pointer;
+      z-index: 5001;
+      line-height: 1;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 5001;
+      transition: background .3s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255,255,255,.18);
+    }
+
+    .lightbox-prev {
+      left: 30px;
+    }
+
+    .lightbox-next {
+      right: 30px;
+    }
+
+
+    /* =========================================================
+        PROJECT NAVIGATION
+    ========================================================= */
+
+    .project-nav {
+      max-width: 1400px;
+      margin: 0 auto 120px;
+      padding: 0 40px;
+    }
+
+    .project-nav-inner {
+      border-top: 1px solid #222;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .nav-project {
+      padding: 35px 30px;
+      text-decoration: none;
+      transition:
+        background .3s ease,
+        padding .3s var(--ease);
+    }
+
+    .nav-project:first-child {
+      border-right: 1px solid var(--line);
+    }
+
+    .nav-project:hover {
+      background: #f5f5f3;
+      padding-left: 40px;
+    }
+
+    .nav-project.next:hover {
+      padding-left: 40px;
+    }
+
+    .nav-project small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 12px;
+    }
+
+    .nav-project strong {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .nav-project.next {
+      text-align: right;
+    }
+
+
+    /* =========================================================
+        FOOTER
+    ========================================================= */
+
+    .site-footer {
+      padding: 55px 20px 35px;
+      text-align: center;
+      border-top: 1px solid var(--line);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+
+    /* =========================================================
+        REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity .9s ease,
+        transform 1s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+        TABLET
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .navbar {
+        padding: 0 22px;
+      }
+
+      .nav-left {
+        gap: 8px;
+      }
+
+      .nav-left a {
+        font-size: 9px;
+        padding: 0 11px;
+      }
+
+      .project-layout {
+        grid-template-columns: 250px 1fr;
+        gap: 40px;
+      }
+
+      .workflow {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .workflow-step {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+
+    /* =========================================================
+        MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      body {
+        padding-top: 64px;
+      }
+
+      .navbar {
+        height: 64px;
+        padding: 0 15px;
+      }
+
+      .navbar.scrolled {
+        height: 60px;
+      }
+
+      .nav-left {
+        display: none;
+      }
+
+      .nav-center {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+      }
+
+      .nav-center img {
+        height: 35px;
+      }
+
+      .nav-right {
+        position: absolute;
+        right: 15px;
+      }
+
+      .project-hero {
+        min-height: 75vh;
+        padding: 70px 20px 55px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .hero-title {
+        font-size: clamp(38px, 12vw, 75px);
+      }
+
+      .hero-side {
+        max-width: 300px;
+      }
+
+      .hero-scroll {
+        left: 20px;
+      }
+
+      .project-layout {
+        display: flex;
+        flex-direction: column;
+        margin-top: 65px;
+        padding: 0 15px;
+        gap: 45px;
+      }
+
+      .project-info {
+        position: relative;
+        top: auto;
+        width: 100%;
+      }
+
+      .project-info h3 {
+        font-size: 28px;
+      }
+
+      .carousel-container {
+        aspect-ratio: 1 / 1;
+      }
+
+      .carousel-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 14px;
+      }
+
+      .carousel-btn.left {
+        left: 10px;
+      }
+
+      .carousel-btn.right {
+        right: 10px;
+      }
+
+      .carousel-nav {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .carousel-nav img {
+        height: 55px;
+      }
+
+      .section-divider {
+        margin-top: 80px;
+        padding: 0 15px;
+      }
+
+      .workflow-section {
+        margin: 85px auto;
+        padding: 0 20px;
+      }
+
+      .workflow-header {
+        display: block;
+        margin-bottom: 50px;
+      }
+
+      .workflow-header h3 {
+        margin-bottom: 30px;
+      }
+
+      .workflow {
+        display: block;
+      }
+
+      .workflow-step {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        min-height: auto;
+        padding: 25px 0;
+        border-left: 0 !important;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .workflow-number {
+        margin: 0;
+        grid-row: span 2;
+        font-size: 11px;
+      }
+
+      .workflow-step h4 {
+        margin-bottom: 8px;
+      }
+
+      .project-video {
+        padding: 0 15px;
+        margin-bottom: 90px;
+      }
+
+      .video-heading h3 {
+        font-size: 29px;
+      }
+
+      .process-videos {
+        padding: 0 15px;
+        margin-bottom: 90px;
+      }
+
+      .process-heading h3 {
+        font-size: 29px;
+      }
+
+      .tiktok-embed-wrapper {
+        padding: 0;
+      }
+
+      .pdf-container {
+        padding: 0 15px;
+        margin-bottom: 90px;
+      }
+
+      .pdf-heading {
+        display: block;
+      }
+
+      .pdf-heading h3 {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+
+      .pdf-wrapper {
+        height: 600px;
+      }
+
+      .project-nav {
+        padding: 0 15px;
+        margin-bottom: 80px;
+      }
+
+      .project-nav-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-project:first-child {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-project.next {
+        text-align: left;
+      }
+
+      .nav-project:hover,
+      .nav-project.next:hover {
+        padding-left: 40px;
+      }
+
+      .lightbox {
+        padding: 20px;
+      }
+
+      .lightbox-close {
+        right: 20px;
+        top: 15px;
+      }
+
+      .lightbox-btn {
+        width: 42px;
+        height: 42px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+    HEADER
+========================================================= -->
+
+<header class="navbar" id="navbar">
+
+  <nav class="nav-left">
+
+    <a href="home.html">Home</a>
+
+  
+
+    <a href="portfolio.html">Portfolio</a>
+         <a href="collaboration.html">Collaboration</a>
+
+
+
+    <a href="about.html">About</a>
+
+    <a href="services.html">Services</a>
+
+    <a href="contact.html">Contact</a>
+
+  </nav>
+
+
+  <div class="nav-center">
+
+    <img
+      src="images/logoluciastudio.webp"
+      alt="Lucía Soto Studio"
+    >
+
+  </div>
+
+
+  <div class="nav-right">
+
+    <!-- LINKEDIN -->
+
+    <a
+      href="https://www.linkedin.com/in/janettluciasoto/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-circle"
+      aria-label="LinkedIn"
+    >
+
+      <svg viewBox="0 0 24 24">
+
+        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 23.8h4.6V7.9H.2v15.9zM8.1 7.9h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.9h-4.6v-7.9c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1v8.1H8.1V7.9z"/>
+
+      </svg>
+
+    </a>
+
+
+    <!-- TIKTOK -->
+
+    <a
+      href="https://www.tiktok.com/@portafoliodelucia"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-circle"
+      aria-label="TikTok"
+    >
+
+      <svg viewBox="0 0 24 24">
+
+        <path d="M12.7 0h3.1c.4 3.3 2.3 5.3 5.6 5.5v3.2c-2 0-3.7-.6-5.5-1.7v7.7c0 5-3.4 8.3-8.4 8.3-4.3 0-7.8-3.5-7.8-7.8 0-4.8 4.5-8.6 9.4-7.5v3.5c-2.4-.4-4.7 1.4-4.7 3.9 0 2.3 1.9 4.1 4.2 4.1 2.5 0 4.1-1.6 4.1-4.7V0z"/>
+
+      </svg>
+
+    </a>
+
+
+    <!-- INSTAGRAM -->
+
+    <a
+      href="https://www.instagram.com/portfolioluciasoto/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="icon-circle instagram"
+      aria-label="Instagram"
+    >
+
+      <svg viewBox="0 0 24 24">
+
+        <rect x="4" y="4" width="16" height="16" rx="4"/>
+
+        <circle cx="12" cy="12" r="4"/>
+
+        <circle cx="16.5" cy="7.5" r="1"/>
+
+      </svg>
+
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+    HERO
+========================================================= -->
+
+<section class="project-hero">
+
+  <div class="hero-content">
+
+    <div>
+
+      <div class="hero-index">
+        01 / Interior Design Project
+      </div>
+
+      <h1 class="hero-title">
+
+        La
+        <span>
+          Foret
+        </span>
+
+      </h1>
+
+    </div>
+
+
+    <div class="hero-side">
+
+      <p>
+        Diseño integral de una sala-comedor concebida como un espacio sereno, natural y flexible, adaptado al estilo de vida de su habitante.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-scroll">
+
+    <span class="hero-scroll-line"></span>
+
+    Scroll para explorar
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    PROJECT INFORMATION + CAROUSEL
+========================================================= -->
+
+<section class="project-layout reveal">
+
+
+  <aside class="project-info">
+
+    <span class="project-label">
+      Ficha del proyecto
+    </span>
+
+
+    <h3>
+      Diseño de interiores, visualización y documentación técnica.
+    </h3>
+
+
+    <div class="project-meta">
+
+
+      <!-- SOLUCIÓN -->
+
+      <div class="meta-row">
+
+        <b>
+          Solución
+        </b>
+
+        <span>
+          Diseñar una sala-comedor minimalista, funcional y flexible, teniendo como premisa el uso de madera maciza en lugar de melamina, en respuesta a la preferencia y vínculo de la cliente con este material desde su formación como ingeniera forestal. La propuesta incorpora piezas móviles, una mesa extensible artesanal y repisas flotantes, integrando además el sofá y las piezas decorativas existentes de la cliente, conservados por su valor personal.
+        </span>
+
+      </div>
+
+
+      <!-- ALCANCE -->
+
+      <div class="meta-row">
+
+        <b>
+          Alcance
+        </b>
+
+        <ul>
+
+          <li>
+            Diseño de interiores
+          </li>
+
+          <li>
+            Distribución y amoblamiento
+          </li>
+
+          <li>
+            Diseño de mobiliario
+          </li>
+
+          <li>
+            Visualización arquitectónica
+          </li>
+
+          <li>
+            Modelado 3D
+          </li>
+
+          <li>
+            Planos técnicos
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- CLIENTE -->
+
+      <div class="meta-row">
+
+        <b>
+          Cliente
+        </b>
+
+        <span>
+          Diana P.
+        </span>
+
+      </div>
+
+
+      <!-- SOFTWARE -->
+
+      <div class="meta-row">
+
+        <b>
+          Software
+        </b>
+
+        <span>
+          AutoCAD · SketchUp · Layout · Enscape · Gemini PRO
+        </span>
+
+      </div>
+
+
+      <!-- AÑO -->
+
+      <div class="meta-row">
+
+        <b>
+          Año
+        </b>
+
+        <span>
+          2025
+        </span>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =======================================================
+      CAROUSEL
+  ======================================================== -->
+
+  <div class="project-slider">
+
+
+    <div class="carousel-container">
+
+
+      <button
+        class="carousel-btn left"
+        type="button"
+        aria-label="Imagen anterior"
+      >
+        ❮
+      </button>
+
+
+      <ul class="carousel-track">
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/laforet1.webp"
+            alt="La Foret - vista 1"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/laforet2.webp"
+            alt="La Foret - vista 2"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/laforet3.webp"
+            alt="La Foret - vista 3"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/laforet4.webp"
+            alt="La Foret - vista 4"
+          >
+
+        </li>
+
+
+        <li class="carousel-slide">
+
+          <img
+            src="images/laforet5.webp"
+            alt="La Foret - vista 5"
+          >
+
+        </li>
+
+
+      </ul>
+
+
+      <button
+        class="carousel-btn right"
+        type="button"
+        aria-label="Imagen siguiente"
+      >
+        ❯
+      </button>
+
+
+      <div class="carousel-counter">
+
+        <span id="current-number">
+          01
+        </span>
+
+        / 05
+
+      </div>
+
+    </div>
+
+
+
+    <!-- THUMBNAILS -->
+
+    <div class="carousel-nav">
+
+
+      <img
+        src="images/laforet1.webp"
+        data-index="0"
+        class="active"
+        alt="Miniatura La Foret 1"
+      >
+
+
+      <img
+        src="images/laforet2.webp"
+        data-index="1"
+        alt="Miniatura La Foret 2"
+      >
+
+
+      <img
+        src="images/laforet3.webp"
+        data-index="2"
+        alt="Miniatura La Foret 3"
+      >
+
+
+      <img
+        src="images/laforet4.webp"
+        data-index="3"
+        alt="Miniatura La Foret 4"
+      >
+
+
+      <img
+        src="images/laforet5.webp"
+        data-index="4"
+        alt="Miniatura La Foret 5"
+      >
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    DIVIDER
+========================================================= -->
+
+<div class="section-divider">
+
+  <div class="section-divider-line"></div>
+
+</div>
+
+
+
+<!-- =========================================================
+    WORKFLOW
+========================================================= -->
+
+<section class="workflow-section reveal">
+
+
+  <div class="workflow-header">
+
+
+    <div>
+
+      <span class="workflow-kicker">
+        Proceso de diseño
+      </span>
+
+      <h3>
+        Workflow
+      </h3>
+
+    </div>
+
+
+    <p>
+      Proceso de diseño orientado a transformar las necesidades del usuario en una propuesta interior funcional, coherente y visualmente integrada, desde la definición conceptual hasta la documentación técnica.
+    </p>
+
+  </div>
+
+
+
+  <div class="workflow">
+
+
+    <!-- 01 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        01
+      </div>
+
+      <h4>
+        Análisis de necesidades
+      </h4>
+
+      <p>
+        Identificación del estilo de vida del cliente, necesidades de almacenamiento, flexibilidad de uso y condicionantes existentes del espacio.
+      </p>
+
+    </div>
+
+
+
+    <!-- 02 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        02
+      </div>
+
+      <h4>
+        Concepto y distribución
+      </h4>
+
+      <p>
+        Definición de una propuesta minimalista y natural, organizando el mobiliario para generar circulación, equilibrio y flexibilidad.
+      </p>
+
+    </div>
+
+
+
+    <!-- 03 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        03
+      </div>
+
+      <h4>
+        Modelado y mobiliario
+      </h4>
+
+      <p>
+        Desarrollo del modelo 3D en SketchUp e incorporación de mobiliario diseñado específicamente para el proyecto.
+      </p>
+
+    </div>
+
+
+
+    <!-- 04 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        04
+      </div>
+
+      <h4>
+        Visualización
+      </h4>
+
+      <p>
+        Generación de visualizaciones arquitectónicas para evaluar materiales, proporciones, composición y atmósfera del espacio.
+      </p>
+
+    </div>
+
+
+
+    <!-- 05 -->
+
+    <div class="workflow-step">
+
+      <div class="workflow-number">
+        05
+      </div>
+
+      <h4>
+        Documentación técnica
+      </h4>
+
+      <p>
+        Desarrollo de planos y documentación necesaria para comunicar correctamente la propuesta y facilitar su posterior ejecución.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    VIDEO
+========================================================= -->
+
+<section class="project-video reveal">
+
+
+  <div class="video-heading">
+
+    <span>
+      Visualización
+    </span>
+
+    <h3>
+      Recorrido virtual
+    </h3>
+
+  </div>
+
+
+  <div class="vimeo-wrapper">
+
+    <iframe
+      src="https://player.vimeo.com/video/1222337781?badge=0&autopause=0&player_id=0&app_id=58479"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+      title="La Foret"
+    >
+    </iframe>
+
+  </div>
+
+
+  <div class="video-credit">
+
+    Animación generada con IA · Recorrido virtual · Postproducción en Clipchamp
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    PROCESS / TIKTOK
+========================================================= -->
+
+<section class="process-videos reveal">
+
+
+  <div class="process-heading">
+
+    <span>
+      Proceso
+    </span>
+
+    <h3>
+      Detrás de escenas
+    </h3>
+
+  </div>
+
+
+  <div class="tiktok-embed-wrapper">
+
+
+    <h4>
+      Corte a color con SketchUp
+    </h4>
+
+
+    <blockquote
+      class="tiktok-embed"
+      cite="https://www.tiktok.com/@portafoliodelucia/video/7533329199063502136"
+      data-video-id="7533329199063502136"
+      style="max-width: 605px; min-width: 325px;"
+    >
+
+      <section>
+
+        <a
+          target="_blank"
+          href="https://www.tiktok.com/@portafoliodelucia"
+        >
+          @portafoliodelucia
+        </a>
+
+        <p>
+          Corte a color con SketchUp #layout #departamento #sala #comedor #muebles #madera #diseñodeinterior #modelado #diseño #interiordesign #láminasarquitectónicas #vivienda #decoración
+        </p>
+
+      </section>
+
+    </blockquote>
+
+  </div>
+
+
+  <div class="process-credit">
+
+    Modelado y corte a color en SketchUp para sala-comedor · Video original en TikTok
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+    TIKTOK SCRIPT
+========================================================= -->
+
+<script
+  async
+  src="https://www.tiktok.com/embed.js">
+</script>
+
+
+
+<!-- =========================================================
+    PDF
+========================================================= -->
+
+<section class="pdf-container reveal">
+
+
+  <div class="pdf-heading">
+
+
+    <div>
+
+      <span>
+        Documentación
+      </span>
+
+      <h3>
+        Planos y documentos
+      </h3>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="pdf-wrapper">
+
+    <iframe
+      src="https://drive.google.com/file/d/10UvVZXIjrul1WOnuEWnv319WgwLnqHsL/preview?rm=minimal"
+      allowfullscreen
+      title="Planos y documentación La Foret"
+    >
+    </iframe>
+
+  </div>
+
+
+
+  <p class="pdf-note">
+
+    Haz clic o desliza para navegar · Usa la rueda del mouse para zoom · Vista optimizada
+
+  </p>
+
+
+</section>
+
+
+
+<!-- =========================================================
+    LIGHTBOX
+========================================================= -->
+
+<div
+  id="lightbox"
+  class="lightbox"
+  aria-hidden="true"
+>
+
+
+  <span
+    class="lightbox-close"
+    role="button"
+    tabindex="0"
+    aria-label="Cerrar imagen"
+  >
+    &times;
+  </span>
+
+
+  <img
+    id="lightbox-image"
+    src=""
+    alt="Imagen ampliada del proyecto"
+  >
+
+
+  <button
+    class="lightbox-btn lightbox-prev"
+    type="button"
+    aria-label="Imagen anterior"
+  >
+    ❮
+  </button>
+
+
+  <button
+    class="lightbox-btn lightbox-next"
+    type="button"
+    aria-label="Imagen siguiente"
+  >
+    ❯
+  </button>
+
+
+</div>
+
+
+
+<!-- =========================================================
+    PROJECT NAVIGATION
+========================================================= -->
+
+<section class="project-nav">
+
+
+  <div class="project-nav-inner">
+
+
+    <a
+      href="Proyecto residencial cocinas.html"
+      class="nav-project"
+    >
+
+      <small>
+        ← Proyecto anterior
+      </small>
+
+      <strong>
+        Proyecto residencial cocinas
+      </strong>
+
+    </a>
+
+
+
+    <a
+      href="Proyecto W&V.html"
+      class="nav-project next"
+    >
+
+      <small>
+        Siguiente proyecto →
+      </small>
+
+      <strong>
+        Proyecto W&V
+      </strong>
+
+    </a>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+    FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+  © 2026 Lucía Soto · Programación asistida por IA
+
+</footer>
+
+
+
+<!-- =========================================================
+    JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  /* =========================================================
+      NAVBAR — SCROLL
+  ========================================================= */
+
+  const navbar =
+    document.getElementById("navbar");
+
+
+  window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 30) {
+
+      navbar.classList.add("scrolled");
+
+    } else {
+
+      navbar.classList.remove("scrolled");
+
+    }
+
+  });
+
+
+
+  /* =========================================================
+      CARRUSEL
+  ========================================================= */
+
+  const track =
+    document.querySelector(".carousel-track");
+
+
+  if (track) {
+
+
+    const slides =
+      Array.from(track.children);
+
+
+    const nextButton =
+      document.querySelector(".carousel-btn.right");
+
+
+    const prevButton =
+      document.querySelector(".carousel-btn.left");
+
+
+    const thumbnails =
+      document.querySelectorAll(".carousel-nav img");
+
+
+    const counter =
+      document.getElementById("current-number");
+
+
+    let currentIndex = 0;
+
+
+
+    function updateCarousel(index) {
+
+
+      track.style.transform =
+        `translateX(-${index * 100}%)`;
+
+
+      thumbnails.forEach((thumbnail) => {
+
+        thumbnail.classList.remove("active");
+
+      });
+
+
+      if (thumbnails[index]) {
+
+        thumbnails[index].classList.add("active");
+
+      }
+
+
+      if (counter) {
+
+        counter.textContent =
+          String(index + 1).padStart(2, "0");
+
+      }
+
+
+      currentIndex = index;
+
+    }
+
+
+
+    /* =======================================================
+        NEXT / PREVIOUS
+    ======================================================== */
+
+    if (nextButton && prevButton) {
+
+
+      nextButton.addEventListener("click", () => {
+
+        currentIndex =
+          (currentIndex + 1) %
+          slides.length;
+
+        updateCarousel(currentIndex);
+
+      });
+
+
+      prevButton.addEventListener("click", () => {
+
+        currentIndex =
+          (currentIndex - 1 + slides.length) %
+          slides.length;
+
+        updateCarousel(currentIndex);
+
+      });
+
+    }
+
+
+
+    /* =======================================================
+        THUMBNAILS
+    ======================================================== */
+
+    thumbnails.forEach((thumbnail) => {
+
+
+      thumbnail.addEventListener("click", () => {
+
+
+        currentIndex =
+          Number(thumbnail.dataset.index);
+
+
+        updateCarousel(currentIndex);
+
+      });
+
+    });
+
+
+
+    /* =======================================================
+        LIGHTBOX
+    ======================================================== */
+
+    const lightbox =
+      document.getElementById("lightbox");
+
+
+    const lightboxImage =
+      document.getElementById("lightbox-image");
+
+
+    const lightboxClose =
+      document.querySelector(".lightbox-close");
+
+
+    const lightboxPrev =
+      document.querySelector(".lightbox-prev");
+
+
+    const lightboxNext =
+      document.querySelector(".lightbox-next");
+
+
+
+    function openLightbox(index) {
+
+
+      currentIndex = index;
+
+
+      const image =
+        slides[index].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      if (lightbox) {
+
+
+        lightbox.classList.add("open");
+
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "false"
+        );
+
+
+      }
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+
+
+
+    slides.forEach((slide, index) => {
+
+
+      const image =
+        slide.querySelector("img");
+
+
+      image.addEventListener("click", () => {
+
+        openLightbox(index);
+
+      });
+
+    });
+
+
+
+    function closeLightbox() {
+
+
+      if (lightbox) {
+
+
+        lightbox.classList.remove("open");
+
+
+        lightbox.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+
+      }
+
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+
+    if (lightboxClose) {
+
+
+      lightboxClose.addEventListener(
+        "click",
+        closeLightbox
+      );
+
+
+      lightboxClose.addEventListener(
+        "keydown",
+        (event) => {
+
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+
+
+            closeLightbox();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    if (lightbox) {
+
+
+      lightbox.addEventListener(
+        "click",
+        (event) => {
+
+
+          if (event.target === lightbox) {
+
+            closeLightbox();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        LIGHTBOX NEXT
+    ======================================================== */
+
+    function showNextImage() {
+
+
+      currentIndex =
+        (currentIndex + 1) %
+        slides.length;
+
+
+      const image =
+        slides[currentIndex].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      updateCarousel(currentIndex);
+
+    }
+
+
+
+    /* =======================================================
+        LIGHTBOX PREVIOUS
+    ======================================================== */
+
+    function showPreviousImage() {
+
+
+      currentIndex =
+        (currentIndex - 1 + slides.length) %
+        slides.length;
+
+
+      const image =
+        slides[currentIndex].querySelector("img");
+
+
+      lightboxImage.src =
+        image.src;
+
+
+      lightboxImage.alt =
+        image.alt;
+
+
+      updateCarousel(currentIndex);
+
+    }
+
+
+
+    if (lightboxNext) {
+
+
+      lightboxNext.addEventListener(
+        "click",
+        (event) => {
+
+
+          event.stopPropagation();
+
+
+          showNextImage();
+
+        }
+      );
+
+    }
+
+
+
+    if (lightboxPrev) {
+
+
+      lightboxPrev.addEventListener(
+        "click",
+        (event) => {
+
+
+          event.stopPropagation();
+
+
+          showPreviousImage();
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        KEYBOARD
+    ======================================================== */
+
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+
+        if (
+          !lightbox ||
+          !lightbox.classList.contains("open")
+        ) {
+
+
+          return;
+
+        }
+
+
+        if (event.key === "Escape") {
+
+          closeLightbox();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+          showNextImage();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+          showPreviousImage();
+
+        }
+
+      }
+    );
+
+
+
+    /* =======================================================
+        SWIPE — LIGHTBOX
+    ======================================================== */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+    if (lightbox) {
+
+
+      lightbox.addEventListener(
+        "touchstart",
+        (event) => {
+
+
+          touchStartX =
+            event.changedTouches[0].screenX;
+
+        }
+      );
+
+
+      lightbox.addEventListener(
+        "touchend",
+        (event) => {
+
+
+          touchEndX =
+            event.changedTouches[0].screenX;
+
+
+          if (
+            touchEndX <
+            touchStartX - 50
+          ) {
+
+
+            showNextImage();
+
+          }
+
+
+          if (
+            touchEndX >
+            touchStartX + 50
+          ) {
+
+
+            showPreviousImage();
+
+          }
+
+        }
+      );
+
+    }
+
+
+
+    /* =======================================================
+        SWIPE — CAROUSEL
+    ======================================================== */
+
+    let sliderStartX = 0;
+    let sliderEndX = 0;
+
+
+    const carouselContainer =
+      document.querySelector(".carousel-container");
+
+
+    if (carouselContainer) {
+
+
+      carouselContainer.addEventListener(
+        "touchstart",
+        (event) => {
+
+
+          sliderStartX =
+            event.changedTouches[0].screenX;
+
+        }
+      );
+
+
+      carouselContainer.addEventListener(
+        "touchend",
+        (event) => {
+
+
+          sliderEndX =
+            event.changedTouches[0].screenX;
+
+
+          if (
+            sliderEndX <
+            sliderStartX - 50
+          ) {
+
+
+            currentIndex =
+              (currentIndex + 1) %
+              slides.length;
+
+
+            updateCarousel(currentIndex);
+
+          }
+
+
+          if (
+            sliderEndX >
+            sliderStartX + 50
+          ) {
+
+
+            currentIndex =
+              (currentIndex - 1 + slides.length) %
+              slides.length;
+
+
+            updateCarousel(currentIndex);
+
+          }
+
+        }
+      );
+
+    }
+
+
+    updateCarousel(0);
+
+  }
+
+
+
+  /* =========================================================
+      SCROLL REVEAL
+  ========================================================= */
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+      (entries) => {
+
+
+        entries.forEach((entry) => {
+
+
+          if (entry.isIntersecting) {
+
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+  revealElements.forEach((element) => {
+
+    observer.observe(element);
+
+  });
+
+
+});
+
+</script>
+
+
+</body>
+</html>
+```
+
+El Vimeo nuevo quedó integrado con:
+
+`https://player.vimeo.com/video/1222337781`
+
+y conserva la proporción **56.21%** que entrega Vimeo, además de ser responsive en móvil y desktop. No añadí el `player.js` porque en esta página no necesitas controlar el reproductor mediante la API.
