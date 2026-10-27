@@ -55,8 +55,7 @@
       background: var(--white);
       color: var(--text);
       line-height: 1.6;
-      padding-top: 88px;
-      overflow-x: hidden;
+overflow-x: hidden;
     }
 
     img {
@@ -90,185 +89,6 @@
       border-radius: 20px;
     }
 
-
-    /* =========================================================
-        HEADER / NAVBAR
-    ========================================================= */
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 40px;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-      z-index: 2000;
-      transition:
-        background 0.4s ease,
-        height 0.4s ease,
-        box-shadow 0.4s ease;
-    }
-
-
-    /* =========================================================
-        NAVBAR — SCROLL
-    ========================================================= */
-
-    .navbar.scrolled {
-      height: 76px;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-    }
-
-
-    /* =========================================================
-        MENÚ IZQUIERDO
-    ========================================================= */
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-
-    /* =========================================================
-        LINKS DEL MENÚ
-    ========================================================= */
-
-    .nav-left a {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 42px;
-      padding: 0 16px;
-      font-family: "Inter", Arial, sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: #555555;
-      text-decoration: none;
-      border-radius: 999px;
-      z-index: 1;
-      transition:
-        color 0.4s var(--ease),
-        transform 0.4s var(--ease);
-    }
-
-
-    /* =========================================================
-        CÍRCULO NEGRO
-    ========================================================= */
-
-    .nav-left a::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: #111111;
-      transform: translate(-50%, -50%) scale(0);
-      z-index: -1;
-      transition:
-        width 0.55s var(--ease),
-        height 0.55s var(--ease),
-        transform 0.55s var(--ease);
-    }
-
-
-    /* =========================================================
-        HOVER
-    ========================================================= */
-
-    .nav-left a:hover {
-      color: #ffffff;
-      transform: translateY(-1px);
-    }
-
-    .nav-left a:hover::before {
-      width: 52px;
-      height: 52px;
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-
-    /* =========================================================
-        LOGO CENTRAL
-    ========================================================= */
-
-    .nav-center {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .nav-center img {
-      display: block;
-      width: auto;
-      height: 40px;
-      transition: transform 0.4s var(--ease);
-    }
-
-    .nav-center img:hover {
-      transform: scale(1.04);
-    }
-
-
-    /* =========================================================
-        REDES SOCIALES
-    ========================================================= */
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-    }
-
-    .icon-circle {
-      width: 31px;
-      height: 31px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #111111;
-      text-decoration: none;
-      transition:
-        transform 0.35s var(--ease),
-        background 0.3s ease;
-    }
-
-    .icon-circle:hover {
-      transform: translateY(-3px) scale(1.08);
-      background: #333333;
-    }
-
-    .icon-circle svg {
-      width: 14px;
-      height: 14px;
-      fill: #ffffff;
-    }
-
-    .icon-circle.instagram svg {
-      fill: none;
-      stroke: #ffffff;
-      stroke-width: 1.8;
-    }
 
 
     /* =========================================================
@@ -712,58 +532,6 @@
     }
 
 
-    /* =========================================================
-        PROCESS / TIKTOK
-    ========================================================= */
-
-    .process-videos {
-      max-width: 1400px;
-      margin: 0 auto 140px;
-      padding: 0 40px;
-    }
-
-    .process-heading {
-      margin-bottom: 35px;
-    }
-
-    .process-heading span {
-      display: block;
-      font-size: 10px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 10px;
-    }
-
-    .process-heading h3 {
-      font-size: 35px;
-      font-weight: 400;
-      letter-spacing: -.05em;
-    }
-
-    .tiktok-embed-wrapper {
-      max-width: 605px;
-      min-width: 325px;
-      margin: 0 auto;
-      padding: 0 10px;
-    }
-
-    .tiktok-embed-wrapper h4 {
-      text-align: center;
-      margin-bottom: 15px;
-      font-size: 18px;
-      font-weight: 500;
-      color: #333;
-    }
-
-    .process-credit {
-      margin-top: 25px;
-      text-align: center;
-      font-size: 10px;
-      color: #888;
-      letter-spacing: .05em;
-    }
-
 
     /* =========================================================
         PDF
@@ -983,21 +751,7 @@
     ========================================================= */
 
     @media (max-width: 1100px) {
-
-      .navbar {
-        padding: 0 22px;
-      }
-
-      .nav-left {
-        gap: 8px;
-      }
-
-      .nav-left a {
-        font-size: 9px;
-        padding: 0 11px;
-      }
-
-      .project-layout {
+.project-layout {
         grid-template-columns: 250px 1fr;
         gap: 40px;
       }
@@ -1019,38 +773,8 @@
     @media (max-width: 700px) {
 
       body {
-        padding-top: 64px;
-      }
-
-      .navbar {
-        height: 64px;
-        padding: 0 15px;
-      }
-
-      .navbar.scrolled {
-        height: 60px;
-      }
-
-      .nav-left {
-        display: none;
-      }
-
-      .nav-center {
-        position: static;
-        transform: none;
-        margin: 0 auto;
-      }
-
-      .nav-center img {
-        height: 35px;
-      }
-
-      .nav-right {
-        position: absolute;
-        right: 15px;
-      }
-
-      .project-hero {
+}
+.project-hero {
         min-height: 75vh;
         padding: 70px 20px 55px;
       }
@@ -1167,21 +891,7 @@
       .video-heading h3 {
         font-size: 29px;
       }
-
-      .process-videos {
-        padding: 0 15px;
-        margin-bottom: 90px;
-      }
-
-      .process-heading h3 {
-        font-size: 29px;
-      }
-
-      .tiktok-embed-wrapper {
-        padding: 0;
-      }
-
-      .pdf-container {
+.pdf-container {
         padding: 0 15px;
         margin-bottom: 90px;
       }
@@ -1245,6 +955,11 @@
       }
     }
 
+  
+    /* Sin encabezado, menú ni iconos de redes */
+    body { padding-top: 0; }
+    .project-hero { min-height: 100vh; }
+
   </style>
 </head>
 
@@ -1252,107 +967,7 @@
 <body>
 
 
-<!-- =========================================================
-    HEADER
-========================================================= -->
 
-<header class="navbar" id="navbar">
-
-  <nav class="nav-left">
-
-    <a href="home.html">Home</a>
-
-  
-
-    <a href="portfolio.html">Portfolio</a>
-         <a href="collaboration.html">Collaboration</a>
-
-
-
-    <a href="about.html">About</a>
-
-    <a href="services.html">Services</a>
-
-    <a href="contact.html">Contact</a>
-
-  </nav>
-
-
-  <div class="nav-center">
-
-    <img
-      src="images/logoluciastudio.webp"
-      alt="Lucía Soto Studio"
-    >
-
-  </div>
-
-
-  <div class="nav-right">
-
-    <!-- LINKEDIN -->
-
-    <a
-      href="https://www.linkedin.com/in/janettluciasoto/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="icon-circle"
-      aria-label="LinkedIn"
-    >
-
-      <svg viewBox="0 0 24 24">
-
-        <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 23.8h4.6V7.9H.2v15.9zM8.1 7.9h4.4v2.2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.9h-4.6v-7.9c0-1.9 0-4.3-2.6-4.3s-3 2-3 4.1v8.1H8.1V7.9z"/>
-
-      </svg>
-
-    </a>
-
-
-    <!-- TIKTOK -->
-
-    <a
-      href="https://www.tiktok.com/@portafoliodelucia"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="icon-circle"
-      aria-label="TikTok"
-    >
-
-      <svg viewBox="0 0 24 24">
-
-        <path d="M12.7 0h3.1c.4 3.3 2.3 5.3 5.6 5.5v3.2c-2 0-3.7-.6-5.5-1.7v7.7c0 5-3.4 8.3-8.4 8.3-4.3 0-7.8-3.5-7.8-7.8 0-4.8 4.5-8.6 9.4-7.5v3.5c-2.4-.4-4.7 1.4-4.7 3.9 0 2.3 1.9 4.1 4.2 4.1 2.5 0 4.1-1.6 4.1-4.7V0z"/>
-
-      </svg>
-
-    </a>
-
-
-    <!-- INSTAGRAM -->
-
-    <a
-      href="https://www.instagram.com/portfolioluciasoto/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="icon-circle instagram"
-      aria-label="Instagram"
-    >
-
-      <svg viewBox="0 0 24 24">
-
-        <rect x="4" y="4" width="16" height="16" rx="4"/>
-
-        <circle cx="12" cy="12" r="4"/>
-
-        <circle cx="16.5" cy="7.5" r="1"/>
-
-      </svg>
-
-    </a>
-
-  </div>
-
-</header>
 
 
 
@@ -1874,82 +1489,6 @@
 
 
 
-<!-- =========================================================
-    PROCESS / TIKTOK
-========================================================= -->
-
-<section class="process-videos reveal">
-
-
-  <div class="process-heading">
-
-    <span>
-      Proceso
-    </span>
-
-    <h3>
-      Detrás de escenas
-    </h3>
-
-  </div>
-
-
-  <div class="tiktok-embed-wrapper">
-
-
-    <h4>
-      Corte a color con SketchUp
-    </h4>
-
-
-    <blockquote
-      class="tiktok-embed"
-      cite="https://www.tiktok.com/@portafoliodelucia/video/7533329199063502136"
-      data-video-id="7533329199063502136"
-      style="max-width: 605px; min-width: 325px;"
-    >
-
-      <section>
-
-        <a
-          target="_blank"
-          href="https://www.tiktok.com/@portafoliodelucia"
-        >
-          @portafoliodelucia
-        </a>
-
-        <p>
-          Corte a color con SketchUp #layout #departamento #sala #comedor #muebles #madera #diseñodeinterior #modelado #diseño #interiordesign #láminasarquitectónicas #vivienda #decoración
-        </p>
-
-      </section>
-
-    </blockquote>
-
-  </div>
-
-
-  <div class="process-credit">
-
-    Modelado y corte a color en SketchUp para sala-comedor · Video original en TikTok
-
-  </div>
-
-
-</section>
-
-
-
-<!-- =========================================================
-    TIKTOK SCRIPT
-========================================================= -->
-
-<script
-  async
-  src="https://www.tiktok.com/embed.js">
-</script>
-
-
 
 <!-- =========================================================
     PDF
@@ -2119,30 +1658,6 @@
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-
-
-  /* =========================================================
-      NAVBAR — SCROLL
-  ========================================================= */
-
-  const navbar =
-    document.getElementById("navbar");
-
-
-  window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 30) {
-
-      navbar.classList.add("scrolled");
-
-    } else {
-
-      navbar.classList.remove("scrolled");
-
-    }
-
-  });
-
 
 
   /* =========================================================
@@ -2765,10 +2280,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
-```
-
-El Vimeo nuevo quedó integrado con:
-
-`https://player.vimeo.com/video/1222337781`
-
-y conserva la proporción **56.21%** que entrega Vimeo, además de ser responsive en móvil y desktop. No añadí el `player.js` porque en esta página no necesitas controlar el reproductor mediante la API.
