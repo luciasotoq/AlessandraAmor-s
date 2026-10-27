@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Proyecto La Foret | Lucía Soto</title>
+  <title>Propuesta de diseño | Polideportivo</title>
 
   <meta
     name="description"
-    content="Proyecto La Foret — diseño de interiores, visualización arquitectónica y documentación técnica desarrollado por Lucía Soto."
+    content="Presentación de propuesta de diseño para polideportivo de INVERSIONES &amp; LOGISTICA PQ EIRL: zonas de descanso, mobiliario, color e identidad gráfica."
   />
 
   <link
@@ -954,11 +954,55 @@ overflow-x: hidden;
         right: 10px;
       }
     }
+    /* =========================================================
+       ENCABEZADO SUPERIOR — SOLO LOGO
+    ========================================================= */
+    body {
+      padding-top: 88px;
+    }
 
-  
-    /* Sin encabezado, menú ni iconos de redes */
-    body { padding-top: 0; }
-    .project-hero { min-height: 100vh; }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+      z-index: 2000;
+    }
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-center img {
+      display: block;
+      width: auto;
+      height: 100px;
+      max-width: min(70vw, 400px);
+      object-fit: contain;
+    }
+
+    .project-hero {
+      min-height: calc(100vh - 88px);
+    }
+
+    @media (max-width: 700px) {
+      body { padding-top: 68px; }
+      .navbar { height: 68px; padding: 0 16px; }
+      .nav-center img { height: 40px; max-width: 76vw; }
+      .project-hero { min-height: calc(100vh - 68px); }
+    }
+
 
   </style>
 </head>
@@ -970,6 +1014,16 @@ overflow-x: hidden;
 
 
 
+
+
+<!-- =========================================================
+    ENCABEZADO — LOGO DEL ESTUDIO
+========================================================= -->
+<header class="navbar" aria-label="Encabezado de la presentación">
+  <div class="nav-center">
+    <img src="images/logoale.webp" alt="Logo del estudio de diseño">
+  </div>
+</header>
 
 <!-- =========================================================
     HERO
@@ -987,9 +1041,9 @@ overflow-x: hidden;
 
       <h1 class="hero-title">
 
-        La
+        Poli
         <span>
-          Foret
+          deportivo
         </span>
 
       </h1>
@@ -1000,7 +1054,7 @@ overflow-x: hidden;
     <div class="hero-side">
 
       <p>
-        Diseño integral de una sala-comedor concebida como un espacio sereno, natural y flexible, adaptado al estilo de vida de su habitante.
+        Propuesta de diseño para un polideportivo con canchas de fútbol y vóley, zonas de descanso y espacios complementarios pensados para mejorar la experiencia de sus usuarios.
       </p>
 
     </div>
@@ -1035,7 +1089,7 @@ overflow-x: hidden;
 
 
     <h3>
-      Diseño de interiores, visualización y documentación técnica.
+      Propuesta de diseño de interiores, mobiliario e identidad visual.
     </h3>
 
 
@@ -1051,7 +1105,7 @@ overflow-x: hidden;
         </b>
 
         <span>
-          Diseñar una sala-comedor minimalista, funcional y flexible, teniendo como premisa el uso de madera maciza en lugar de melamina, en respuesta a la preferencia y vínculo de la cliente con este material desde su formación como ingeniera forestal. La propuesta incorpora piezas móviles, una mesa extensible artesanal y repisas flotantes, integrando además el sofá y las piezas decorativas existentes de la cliente, conservados por su valor personal.
+          Desarrollar una propuesta de diseño que renueve la imagen del polideportivo y mejore la funcionalidad de sus espacios complementarios. El planteamiento integra zonas de descanso, mobiliario para la oficina-tienda y recursos cromáticos y gráficos aplicados al entorno deportivo, incluyendo viniles para los bordes de las canchas. La propuesta busca articular los distintos ambientes mediante una identidad visual coherente, dinámica y vinculada con la actividad deportiva.
         </span>
 
       </div>
@@ -1067,31 +1121,30 @@ overflow-x: hidden;
 
         <ul>
 
-          <li>
-            Diseño de interiores
-          </li>
-
-          <li>
-            Distribución y amoblamiento
-          </li>
-
-          <li>
-            Diseño de mobiliario
-          </li>
-
-          <li>
-            Visualización arquitectónica
-          </li>
-
-          <li>
-            Modelado 3D
-          </li>
-
-          <li>
-            Planos técnicos
-          </li>
+          <li>Diseño de zonas de descanso</li>
+          <li>Planteamiento de mobiliario y distribución</li>
+          <li>Propuesta para oficina y tienda</li>
+          <li>Selección y aplicación de color</li>
+          <li>Diseño de viniles gráficos para las canchas</li>
+          <li>Modelado 3D y visualización arquitectónica</li>
+          <li>Desarrollo de láminas de presentación</li>
 
         </ul>
+
+      </div>
+
+
+      <!-- TIPOLOGÍA -->
+
+      <div class="meta-row">
+
+        <b>
+          Tipología
+        </b>
+
+        <span>
+          Espacio deportivo y recreativo con canchas de fútbol y vóley.
+        </span>
 
       </div>
 
@@ -1105,7 +1158,7 @@ overflow-x: hidden;
         </b>
 
         <span>
-          Diana P.
+          INVERSIONES &amp; LOGISTICA PQ EIRL
         </span>
 
       </div>
@@ -1124,22 +1177,6 @@ overflow-x: hidden;
         </span>
 
       </div>
-
-
-      <!-- AÑO -->
-
-      <div class="meta-row">
-
-        <b>
-          Año
-        </b>
-
-        <span>
-          2025
-        </span>
-
-      </div>
-
     </div>
 
   </aside>
@@ -1171,8 +1208,8 @@ overflow-x: hidden;
         <li class="carousel-slide">
 
           <img
-            src="images/laforet1.webp"
-            alt="La Foret - vista 1"
+            src="images/polideportivo1.webp"
+            alt="Polideportivo - vista 1"
           >
 
         </li>
@@ -1181,8 +1218,8 @@ overflow-x: hidden;
         <li class="carousel-slide">
 
           <img
-            src="images/laforet2.webp"
-            alt="La Foret - vista 2"
+            src="images/polideportivo2.webp"
+            alt="Polideportivo - vista 2"
           >
 
         </li>
@@ -1191,8 +1228,8 @@ overflow-x: hidden;
         <li class="carousel-slide">
 
           <img
-            src="images/laforet3.webp"
-            alt="La Foret - vista 3"
+            src="images/polideportivo3.webp"
+            alt="Polideportivo - vista 3"
           >
 
         </li>
@@ -1201,8 +1238,8 @@ overflow-x: hidden;
         <li class="carousel-slide">
 
           <img
-            src="images/laforet4.webp"
-            alt="La Foret - vista 4"
+            src="images/polideportivo4.webp"
+            alt="Polideportivo - vista 4"
           >
 
         </li>
@@ -1211,8 +1248,44 @@ overflow-x: hidden;
         <li class="carousel-slide">
 
           <img
-            src="images/laforet5.webp"
-            alt="La Foret - vista 5"
+            src="images/polideportivo5.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo6.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo7.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo8.webp"
+            alt="Polideportivo - vista 5"
+          >
+
+        </li>
+
+                <li class="carousel-slide">
+
+          <img
+            src="images/polideportivo9.webp"
+            alt="Polideportivo - vista 5"
           >
 
         </li>
@@ -1250,40 +1323,66 @@ overflow-x: hidden;
 
 
       <img
-        src="images/laforet1.webp"
+        src="images/polideportivo1.webp"
         data-index="0"
         class="active"
-        alt="Miniatura La Foret 1"
+        alt="Miniatura Polideportivo 1"
       >
 
 
       <img
-        src="images/laforet2.webp"
+        src="images/polideportivo2.webp"
         data-index="1"
-        alt="Miniatura La Foret 2"
+        alt="Miniatura Polideportivo 2"
       >
 
 
       <img
-        src="images/laforet3.webp"
+        src="images/polideportivo3.webp"
         data-index="2"
-        alt="Miniatura La Foret 3"
+        alt="Miniatura Polideportivo 3"
       >
 
 
       <img
-        src="images/laforet4.webp"
+        src="images/polideportivo4.webp"
         data-index="3"
-        alt="Miniatura La Foret 4"
+        alt="Miniatura Polideportivo 4"
       >
 
 
       <img
-        src="images/laforet5.webp"
+        src="images/polideportivo5.webp"
         data-index="4"
-        alt="Miniatura La Foret 5"
+        alt="Miniatura Polideportivo 5"
       >
 
+
+            <img
+        src="images/polideportivo6.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 6"
+      >
+
+
+            <img
+        src="images/polideportivo7.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 7"
+      >
+
+
+            <img
+        src="images/polideportivo8.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 8"
+      >
+
+      <img
+        src="images/polideportivo9.webp"
+        data-index="4"
+        alt="Miniatura Polideportivo 9"
+      >
 
     </div>
 
@@ -1329,7 +1428,7 @@ overflow-x: hidden;
 
 
     <p>
-      Proceso de diseño orientado a transformar las necesidades del usuario en una propuesta interior funcional, coherente y visualmente integrada, desde la definición conceptual hasta la documentación técnica.
+      Desarrollo de una propuesta visual y funcional para organizar los espacios complementarios del polideportivo y reforzar la identidad del conjunto mediante mobiliario, color y recursos gráficos.
     </p>
 
   </div>
@@ -1352,7 +1451,7 @@ overflow-x: hidden;
       </h4>
 
       <p>
-        Identificación del estilo de vida del cliente, necesidades de almacenamiento, flexibilidad de uso y condicionantes existentes del espacio.
+        Reconocimiento de las áreas de uso, las necesidades de los usuarios y las oportunidades de mejora en las zonas de descanso, la oficina-tienda y el entorno de las canchas.
       </p>
 
     </div>
@@ -1372,7 +1471,7 @@ overflow-x: hidden;
       </h4>
 
       <p>
-        Definición de una propuesta minimalista y natural, organizando el mobiliario para generar circulación, equilibrio y flexibilidad.
+        Definición de un lenguaje visual deportivo mediante una propuesta de color, organización espacial y criterios de integración entre las distintas áreas.
       </p>
 
     </div>
@@ -1392,7 +1491,7 @@ overflow-x: hidden;
       </h4>
 
       <p>
-        Desarrollo del modelo 3D en SketchUp e incorporación de mobiliario diseñado específicamente para el proyecto.
+        Modelado tridimensional de los ambientes y planteamiento de mobiliario para las zonas de descanso y el espacio de oficina-tienda.
       </p>
 
     </div>
@@ -1412,7 +1511,7 @@ overflow-x: hidden;
       </h4>
 
       <p>
-        Generación de visualizaciones arquitectónicas para evaluar materiales, proporciones, composición y atmósfera del espacio.
+        Elaboración de visualizaciones para comunicar la propuesta de distribución, mobiliario, paleta cromática y aplicación de gráficos en el polideportivo.
       </p>
 
     </div>
@@ -1432,7 +1531,7 @@ overflow-x: hidden;
       </h4>
 
       <p>
-        Desarrollo de planos y documentación necesaria para comunicar correctamente la propuesta y facilitar su posterior ejecución.
+        Organización de láminas y documentación gráfica para presentar de forma clara los criterios de diseño, las soluciones propuestas y su aplicación en los espacios.
       </p>
 
     </div>
@@ -1445,46 +1544,17 @@ overflow-x: hidden;
 
 
 <!-- =========================================================
-    VIDEO
+    PRESENTACIÓN VISUAL
 ========================================================= -->
 
 <section class="project-video reveal">
-
-
   <div class="video-heading">
-
-    <span>
-      Visualización
-    </span>
-
-    <h3>
-      Recorrido virtual
-    </h3>
-
+    <span>Visualización</span>
+    <h3>Propuesta del polideportivo</h3>
   </div>
-
-
-  <div class="vimeo-wrapper">
-
-    <iframe
-      src="https://player.vimeo.com/video/1222337781?badge=0&autopause=0&player_id=0&app_id=58479"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-      allowfullscreen
-      referrerpolicy="strict-origin-when-cross-origin"
-      title="La Foret"
-    >
-    </iframe>
-
+  <div class="vimeo-wrapper" style="padding: 36px; display: flex; align-items: center; justify-content: center; text-align: center; background: var(--light);">
+    <p>En este espacio se puede incorporar un recorrido virtual o video de presentación del proyecto cuando esté disponible.</p>
   </div>
-
-
-  <div class="video-credit">
-
-    Animación generada con IA · Recorrido virtual · Postproducción en Clipchamp
-
-  </div>
-
 </section>
 
 
@@ -1519,9 +1589,9 @@ overflow-x: hidden;
   <div class="pdf-wrapper">
 
     <iframe
-      src="https://drive.google.com/file/d/10UvVZXIjrul1WOnuEWnv319WgwLnqHsL/preview?rm=minimal"
+      src="documentacion-polideportivo.pdf"
       allowfullscreen
-      title="Planos y documentación La Foret"
+      title="Láminas y documentación del polideportivo"
     >
     </iframe>
 
@@ -1531,7 +1601,7 @@ overflow-x: hidden;
 
   <p class="pdf-note">
 
-    Haz clic o desliza para navegar · Usa la rueda del mouse para zoom · Vista optimizada
+    La documentación de la propuesta se presenta en este espacio. Coloca el archivo documentacion-polideportivo.pdf junto al HTML.
 
   </p>
 
@@ -1591,50 +1661,15 @@ overflow-x: hidden;
 
 
 <!-- =========================================================
-    PROJECT NAVIGATION
+    CIERRE DE PRESENTACIÓN
 ========================================================= -->
-
 <section class="project-nav">
-
-
-  <div class="project-nav-inner">
-
-
-    <a
-      href="Proyecto residencial cocinas.html"
-      class="nav-project"
-    >
-
-      <small>
-        ← Proyecto anterior
-      </small>
-
-      <strong>
-        Proyecto residencial cocinas
-      </strong>
-
-    </a>
-
-
-
-    <a
-      href="Proyecto W&V.html"
-      class="nav-project next"
-    >
-
-      <small>
-        Siguiente proyecto →
-      </small>
-
-      <strong>
-        Proyecto W&V
-      </strong>
-
-    </a>
-
-
+  <div class="project-nav-inner" style="justify-content: center; text-align: center;">
+    <div class="nav-project" style="cursor: default;">
+      <small>Propuesta de diseño</small>
+      <strong>Polideportivo · Espacios deportivos y recreativos</strong>
+    </div>
   </div>
-
 </section>
 
 
